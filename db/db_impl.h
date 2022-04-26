@@ -52,7 +52,7 @@ class DBImpl : public DB {
   // Extra methods (for testing) that are not in the public DB interface
 
   // Compact any files in the named level that overlap [*begin,*end]
-  void TEST_CompactRange(int level, const Slice* begin, const Slice* end) override;
+  void TEST_CompactRange(int level, const Slice* begin, const Slice* end);
 
   // Force current memtable contents to be compacted.
   Status TEST_CompactMemTable() override;

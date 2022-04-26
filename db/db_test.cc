@@ -2105,6 +2105,8 @@ class ModelDB : public DB {
     }
   }
   void CompactRange(const Slice* start, const Slice* end) override {}
+  Status TEST_CompactMemTable() override {}
+
 
  private:
   class ModelIter : public Iterator {

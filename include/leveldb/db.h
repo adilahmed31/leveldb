@@ -146,11 +146,8 @@ class LEVELDB_EXPORT DB {
   //    db->CompactRange(nullptr, nullptr);
   virtual void CompactRange(const Slice* begin, const Slice* end) = 0;
 
-  // Compact any files in the named level that overlap [*begin,*end]
-  void TEST_CompactRange(int level, const Slice* begin, const Slice* end);
-
   // Force current memtable contents to be compacted.
-  Status TEST_CompactMemTable();
+  virtual Status TEST_CompactMemTable() = 0;
 };
 
 // Destroy the contents of the specified database.
