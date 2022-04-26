@@ -52,10 +52,10 @@ class DBImpl : public DB {
   // Extra methods (for testing) that are not in the public DB interface
 
   // Compact any files in the named level that overlap [*begin,*end]
-  void TEST_CompactRange(int level, const Slice* begin, const Slice* end);
+  void TEST_CompactRange(int level, const Slice* begin, const Slice* end) override;
 
   // Force current memtable contents to be compacted.
-  Status TEST_CompactMemTable();
+  Status TEST_CompactMemTable() override;
 
   // Return an internal iterator over the current state of the database.
   // The keys of this iterator are internal keys (see format.h).
